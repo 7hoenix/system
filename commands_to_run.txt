@@ -3,3 +3,8 @@
 name: brew
 git
 bash-completion
+
+
+
+## SET
+git config --global core.excludesfile ~/.gitignore
