@@ -1,0 +1,12 @@
+rename-session dev
+rename-window project
+new-window -n deps
+send "cd some/path" C-m
+send "some command" C-m
+split-window -v
+send "cd some/other/path" C-m
+send "some other-command" C-m
+split-window -h
+send "cd a/third/path" C-m
+send "some third-command" C-m
+select-window project
