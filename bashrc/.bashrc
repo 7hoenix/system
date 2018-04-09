@@ -28,6 +28,8 @@ RESET="\[$(tput sgr0)\]"
 
 PS1="(${GREEN}\u${RESET}) ${GREEN}\$(short_pwd)${YELLOW}\$(parse_git_branch) ${RESET}\$ "
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 source ~/.env_vars
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
