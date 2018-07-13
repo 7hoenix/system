@@ -5,7 +5,8 @@ alias ll='ls -laH'
 alias vim='nvim'
 alias v='nvim'
 
-alias cur='cd ~/current && tmux'
+alias cur='cd ~/current'
+alias curo='cd ~/current_open_source && tmux'
 alias work='tmux source-file .tmuxrc'
 
 alias interview='cd ~/Vault/8th-light/internal/interview'
@@ -15,6 +16,8 @@ alias gdc='git diff --cached'
 alias ga='git add'
 alias gc='git commit'
 alias gl='git log'
+
+alias ppath='echo $PATH | tr : "\n"'
 
 # Set javas
 
@@ -45,7 +48,13 @@ RESET="\[$(tput sgr0)\]"
 PS1="(${GREEN}\u${RESET}) ${GREEN}\$(short_pwd)${YELLOW}\$(parse_git_branch) ${RESET}\$ "
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export PATH=~/.local/bin:$PATH
+export PATH=$HOME/Vault/deps/apache-ant-1.8.4/bin:$PATH
 
 source ~/.env_vars
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
