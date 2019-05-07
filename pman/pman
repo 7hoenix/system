@@ -1,0 +1,3 @@
+Personal Manual (for stuff I never want to think about again)
+
+docker exec -it <container-name> /bin/bash

@@ -18,6 +18,7 @@ alias gc='git commit'
 alias gl='git log'
 
 alias ppath='echo $PATH | tr : "\n"'
+alias pman='cat ~/Vault/system/pman/pman | less'
 
 # Set javas
 
