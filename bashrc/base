@@ -19,6 +19,7 @@ alias gl='git log'
 
 alias ppath='echo $PATH | tr : "\n"'
 alias pman='cat ~/Vault/system/pman/pman | less'
+alias pcur='cd ~/Vault/personal/projects/trained && source aliases.sh && tmux'
 
 # Set javas
 
