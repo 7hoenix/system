@@ -1,3 +1,7 @@
 Personal Manual (for stuff I never want to think about again)
 
+-- Get into shell session in docker container
 docker exec -it <container-name> /bin/bash
+
+-- Delete all merged branches in repo
+for mergedBranch in $(git for-each-ref --format '%(refname:short)' --merged HEAD refs/heads/) ;do git branch -d $mergedBranch ;done
