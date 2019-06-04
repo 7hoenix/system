@@ -19,6 +19,7 @@ alias gl='git log'
 
 alias ppath='echo $PATH | tr : "\n"'
 alias pman='cat ~/Vault/system/pman/pman | less'
+alias pmanc='nvim ~/Vault/system/pman/pman'
 alias pcur='cd ~/Vault/personal/projects/trained && source aliases.sh && tmux'
 
 # Set javas
@@ -51,7 +52,7 @@ PS1="(${GREEN}\u${RESET}) ${GREEN}\$(short_pwd)${YELLOW}\$(parse_git_branch) ${R
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export PATH=~/.local/bin:$PATH
-export PATH=$HOME/Vault/deps/apache-ant-1.8.4/bin:$PATH
+export PATH=$HOME/Vault/deps/apache-ant-1.10.5/bin:$PATH
 
 source ~/.env_vars
 
@@ -60,3 +61,12 @@ source ~/.env_vars
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
