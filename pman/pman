@@ -1,7 +1,29 @@
 Personal Manual (for stuff I never want to think about again)
 
+-- DOCKER
+
 -- Get into shell session in docker container
 docker exec -it <container-name> /bin/bash
 
+-- Kill it all with fire
+docker system prune && docker rmi $(docker images -qa)
+
+-- GIT
+
 -- Delete all merged branches in repo
 for mergedBranch in $(git for-each-ref --format '%(refname:short)' --merged HEAD refs/heads/) ;do git branch -d $mergedBranch ;done
+
+-- What branch is the default branch
+git remote show origin | grep "HEAD branch" | sed 's/.*: //'
+
+-- Adhoc test framework
+:au BufWrite * :silent exec "!tmux send-keys -Rt 1 \"mix test\" Enter" | redraw!
+
+-- Overclock Key speed (Must log out and back in)
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+
+
+-- COOL STUFF
+
+find . -type f -name "*.myFileExtension" -exec sed -i "" "s/replaceMe/replaceWith/g" {} \;
