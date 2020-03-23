@@ -1,7 +1,11 @@
+alias myc='tmux attach-session -t my-computer'
+
 alias bashc='vim ~/.bashrc'
 alias bashs='source ~/.bashrc'
 alias cbashc='vim ~/current/.bashrc'
 alias cbashs='source ~/current/.bashrc'
+alias alac='vim ~/.alacritty.yml'
+alias alas='source ~/.alacritty.yml'
 
 alias vimc='vim ~/Vault/dotfiles/nvim/init.vim'
 alias ll='ls -laH'
@@ -28,6 +32,17 @@ alias ppath='echo $PATH | tr : "\n"'
 alias pman='less ~/Vault/system/pman/pman'
 alias pmanc='nvim ~/Vault/system/pman/pman'
 alias pcur='cd ~/Vault/personal/projects/trained && source aliases.sh && tmux'
+
+alias gox='~/go/bin/gox'
+
+# Automation Workflows
+
+alias brewu='brew update && brew upgrade'
+
+# Terraform
+
+alias tp="terraform plan"
+alias ta="terraform apply"
 
 # Set javas
 
@@ -66,9 +81,6 @@ source ~/.env_vars
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
-
 source /Users/j7hoenix/Work/.bashrc
 
 # tabtab source for serverless package
@@ -80,3 +92,15 @@ source /Users/j7hoenix/Work/.bashrc
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. /usr/local/opt/asdf/asdf.sh
+
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

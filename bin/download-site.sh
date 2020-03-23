@@ -6,6 +6,6 @@ wget \
   --page-requisites \
   --html-extension\
   --convert-links \
-  --domains postgrest.org \
+  --domains elm-lang.org \
   --no-parent \
-    http://postgrest.org/en/v5.2/
+    https://package.elm-lang.org/packages/elm-explorations/test/latest/
