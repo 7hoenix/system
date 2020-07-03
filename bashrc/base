@@ -1,0 +1,106 @@
+alias myc='tmux attach-session -t my-computer'
+
+alias bashc='vim ~/.bashrc'
+alias bashs='source ~/.bashrc'
+alias cbashc='vim ~/current/.bashrc'
+alias cbashs='source ~/current/.bashrc'
+alias alac='vim ~/.alacritty.yml'
+alias alas='source ~/.alacritty.yml'
+
+alias vimc='vim ~/Vault/dotfiles/nvim/init.vim'
+alias ll='ls -laH'
+alias vim='nvim'
+alias v='nvim'
+
+alias cur='cd ~/current'
+alias curo='cd ~/current_open_source && tmux'
+alias work='tmux source-file .tmuxrc'
+
+alias interview='cd ~/Vault/8th-light/internal/interview'
+
+alias gs='git status'
+alias gpfwl='git push --force-with-lease'
+alias gcane='git commit --amend --no-edit'
+alias gcap='git commit --amend --no-edit && git push --force-with-lease'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gc='git commit'
+alias gl='git log'
+alias gb='git branch'
+
+alias ppath='echo $PATH | tr : "\n"'
+alias pman='less ~/Vault/system/pman/pman'
+alias pmanc='nvim ~/Vault/system/pman/pman'
+alias pcur='cd ~/Vault/personal/projects/trained && source aliases.sh && tmux'
+
+alias gox='~/go/bin/gox'
+
+# Automation Workflows
+
+alias brewu='brew update && brew upgrade'
+
+# Terraform
+
+alias tp="terraform plan"
+alias ta="terraform apply"
+
+# Set javas
+
+export JAVA_7_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+
+alias java7='export JAVA_HOME=$JAVA_7_HOME'
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+
+#default java8 :)
+export JAVA_HOME=$JAVA_8_HOME
+
+# PS1 display prompt
+
+short_pwd() {
+    cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
+    echo -n $cwd
+}
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+RESET="\[$(tput sgr0)\]"
+
+PS1="(${GREEN}\u${RESET}) ${GREEN}\$(short_pwd)${YELLOW}\$(parse_git_branch) ${RESET}\$ "
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export PATH=~/.local/bin:$PATH
+export PATH=$HOME/Vault/deps/apache-ant-1.10.5/bin:$PATH
+export PATH=$HOME/Deps/nand2tetris/tools/:$PATH
+
+source ~/.env_vars
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /Users/j7hoenix/Work/.bashrc
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. /usr/local/opt/asdf/asdf.sh
+
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
