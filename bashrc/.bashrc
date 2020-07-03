@@ -20,6 +20,10 @@ alias gl='git log'
 
 alias tmuxk='pkill -f tmux'
 
+# Automation
+
+alias 7copy="history 2 | grep -v 'history' | grep -v '7copy' | xargs | sed -E 's/^[0-9]+ (.*)$/\1/' | pbcopy"
+
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
     echo -n $cwd
