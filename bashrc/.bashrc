@@ -10,6 +10,8 @@ alias cur='cd ~/Dropbox/projects/trained/ChessTrained && source aliases.sh'
 alias pcur='cd ~/Dropbox/projects/trained'
 alias work='tmux source-file .tmuxrc'
 
+alias calc='vim ~/.config/khal/config'
+
 alias gpfwl='git push --force-with-lease'
 alias gcap='git commit --amend --no-edit && git push --force-with-lease'
 alias gs='git status'
@@ -20,9 +22,11 @@ alias gl='git log'
 
 alias tmuxk='pkill -f tmux'
 
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+
 # Automation
 
-alias 7copy="history 2 | grep -v 'history' | grep -v '7copy' | xargs | sed -E 's/^[0-9]+ (.*)$/\1/' | pbcopy"
+alias 7copy="history 2 | head -n1 | cut -d' ' -f 5- | pbcopy"
 
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
