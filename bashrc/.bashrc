@@ -28,6 +28,8 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 alias 7copy="history 2 | head -n1 | cut -d' ' -f 5- | pbcopy"
 
+export EDITOR=$(which nvim)
+
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
     echo -n $cwd
@@ -56,6 +58,7 @@ source $HOME/.asdf/completions/asdf.bash
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
+PATH=~/Dropbox/personal/system/bin:$PATH
 PATH=~/Dropbox/deps:$PATH
 PATH=~/.local/bin:$PATH
 PATH=~/bin:$PATH

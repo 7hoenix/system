@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#
+# Attribution
+# Inspired by cthulahoops.
+# The idea is to provide a single interface for quickly editing various configurations.
+#
+
+set -e
+set -u
+set -o pipefail
+
+declare -A configs
+configs=(
+    ['nvim']=".config/nvim/init.vim"
+    ['bash']="Dropbox/personal/system/bashrc/.bashrc"
+    ['tmux']=".tmux.conf"
+    ['ec']='bin/ec'
+)
+
+case "$1" in
+    show)
+        echo "$HOME/${configs[$2]}"
+        ;;
+    *)
+        exec $EDITOR "$HOME/${configs[$1]}"
+esac
