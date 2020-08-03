@@ -1,3 +1,23 @@
+# -----------------------------------
+# SYSTEM CONFIGURATION
+
+source '/Users/jphoenx/Dropbox/utilities/ec/ec'
+
+SYSTEM_BASE="Dropbox/personal/system"
+
+declare -A ec_configs
+ec_configs=(
+    ['nvim']=".config/nvim/init.vim"
+    ['bash']="$SYSTEM_BASE/bashrc/.bashrc"
+    ['tmux']="Documents/personal/dotfiles/tmux/tmux.conf"
+    ['ec']="/Users/jphoenx/Dropbox/utilities/ec/ec"
+)
+
+ec_reload_required=(bash ec)
+
+# -----------------------------------
+
+
 alias bashc='vim ~/.bashrc && source ~/.bashrc'
 alias bashs='source ~/.bashrc'
 alias ll='ls -laH'
