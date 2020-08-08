@@ -1,4 +1,12 @@
+#######################
+# Environment Variables
+
 export EDITOR=$(which nvim)
+
+PATH=~/.local/bin:$PATH
+
+#######################
+# PS1
 
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
@@ -15,4 +23,7 @@ RESET="\[$(tput sgr0)\]"
 
 PS1="(${BOLD}${GREEN}\u${RESET}) ${BOLD}${GREEN}\$(short_pwd)${BLUE}\$(parse_git_branch) ${RESET}\$ "
 
-PATH=~/.local/bin:$PATH
+#######################
+# Sourced
+
+source $SYSTEM_ROOT/universal/aliases.bash
