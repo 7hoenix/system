@@ -1,3 +1,3 @@
 function _install {
-  ln -s $SYSTEM_ROOT/dotfiles/git/gitconfig ~/.gitconfig
+  ln -s $SYSTEM_ROOT/universal/dotfiles/git/gitconfig ~/.gitconfig
 }
