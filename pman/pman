@@ -28,6 +28,8 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 find . -type f -name "*.myFileExtension" -exec sed -i "" "s/replaceMe/replaceWith/g" {} \;
 
--- DELETABLE
+-- nodemon (for re-running node stuff)
 
-Scalafmt: Cmd + Option + L
+```sh
+nodemon --exec <NODE_RUN_COMMAND>
+```
