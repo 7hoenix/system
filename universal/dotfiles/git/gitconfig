@@ -1,0 +1,7 @@
+[user]
+	name = J 7hoenix
+	email = jpholzmann@gmail.com
+	username = 7hoenix
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
