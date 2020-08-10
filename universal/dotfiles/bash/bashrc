@@ -8,20 +8,16 @@ PATH=~/.local/bin:$PATH
 #######################
 # PS1
 
-short_pwd() {
-    cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
-    echo -n $cwd
-}
-
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+
 BOLD=`tput bold`
 BLUE="\[$(tput setaf 4)\]"
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 
-PS1="(${BOLD}${GREEN}\u${RESET}) ${BOLD}${GREEN}\$(short_pwd)${BLUE}\$(parse_git_branch) ${RESET}\$ "
+PS1="(${BOLD}${GREEN}\u${RESET}) ${BOLD}${GREEN}\w${BLUE}\$(parse_git_branch) ${RESET}\$ "
 
 #######################
 # Sourced

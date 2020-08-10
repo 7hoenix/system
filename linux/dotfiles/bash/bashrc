@@ -118,10 +118,7 @@ fi
 
 ######################
 
-BASH_ROOT="$(dirname "${0}")"
-pushd ${BASH_ROOT%/linux/dotfiles/bash} > /dev/null
-  SYSTEM_ROOT="$PWD"
-popd > /dev/null
+SYSTEM_ROOT="/home/j7hoenix/Vault/system"
 
 source $SYSTEM_ROOT/universal/dotfiles/bash/bashrc
 
