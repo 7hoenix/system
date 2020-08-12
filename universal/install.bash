@@ -9,6 +9,8 @@ function _install {
   configs=(
       ['.gitconfig']="$SYSTEM_ROOT/universal/dotfiles/git/gitconfig"
       ['.bashrc']="$SYSTEM_ROOT/$os/dotfiles/bash/bashrc"
+      ['.tmux.conf']="$SYSTEM_ROOT/universal/dotfiles/tmux/tmuxrc"
+      ['.tmate.conf']="$SYSTEM_ROOT/universal/dotfiles/tmux/tmuxrc"
   )
 
   for target in "${!configs[@]}"
