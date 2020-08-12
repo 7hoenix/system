@@ -18,4 +18,6 @@ function _install {
     rm ~/$target 2> /dev/null || true
     ln -s ${configs[$target]} ~/$target
   done
+
+  mkdir -p "$SYSTEM_ROOT/util"
 }

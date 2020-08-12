@@ -3,7 +3,17 @@
 
 export EDITOR=$(which nvim)
 
-PATH=~/.local/bin:$PATH
+#######################
+# Edit Configurations
+
+declare -A ec_configs
+ec_configs=(
+    ['nvim']=".config/nvim/init.vim"
+    ['bash']="$SYSTEM_ROOT/universal/dotfiles/bash/bashrc"
+    ['tmux']="$SYSTEM_ROOT/universal/dotfiles/tmux/tmuxrc"
+)
+
+ec_reload_required=(bash ec)
 
 #######################
 # PS1
@@ -22,4 +32,11 @@ PS1="(${BOLD}${GREEN}\u${RESET}) ${BOLD}${GREEN}\w${BLUE}\$(parse_git_branch) ${
 #######################
 # Sourced
 
+for script in $SYSTEM_ROOT/util/*; do source $script; done
 source $SYSTEM_ROOT/universal/aliases.bash
+
+#######################
+# PATH
+
+PATH=~/.local/bin:$PATH
+PATH=$SYSTEM_ROOT/util:$PATH
