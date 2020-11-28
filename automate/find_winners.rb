@@ -1,9 +1,9 @@
 # Automates drawing folks names out of a hat.
 # Expects a CSV file like:
 #
-# Name, item_1, item_2, . . ., item_N
-# some_name,,'x', . . ., 'x'
-# some_other_name,'x',, . . .,
+# Name,item_1,item_2,...,item_N
+# some_name,,x,...,x
+# some_other_name,x,,...,
 
 require 'csv'
 
