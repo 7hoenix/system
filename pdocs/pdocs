@@ -33,3 +33,14 @@ find . -type f -name "*.myFileExtension" -exec sed -i "" "s/replaceMe/replaceWit
 ```sh
 nodemon --exec <NODE_RUN_COMMAND>
 ```
+
+-- VIM
+
+-- How to copy a file
+-- https://vi.stackexchange.com/a/6264
+
+```netrw
+mt     -- mark target directory 
+mf     -- mark target file
+mc     -- mark copy to (directory)
+```
