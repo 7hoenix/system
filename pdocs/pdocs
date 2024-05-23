@@ -67,3 +67,9 @@ vim.keymap.set("n", "<C-M-V>", "@v")
 ```
 
 Turn on esc+ in iterm2 as well.
+
+
+### Register Mappings:
+
+c is for copy
+x is for variables in macro recordings
